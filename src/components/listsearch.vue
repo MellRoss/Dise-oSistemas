@@ -72,11 +72,14 @@
                                                     <v-col cols="12">
                                                     <v-text-field v-if="checkbox" outlined dense background-color="white" color="blue-grey lighten-4" v-model="number" :rules="numberRules" label="Ingrese Telefono" required ></v-text-field>
                                                     <v-checkbox v-model="checkbox" label="Quiero que me llamen"></v-checkbox>
+                                                    <v-label> A que hora se pueden contactar conmigo: </v-label>
                                                     </v-col>
                                                     <v-flex d-flex flex-row>
                                                         <v-combobox v-model="select" :items="days" class="mx-2" label="Dias" multiple outlined clearable dense ></v-combobox>
-                                                        <v-select :items="hr1" label="Hora" class="mx-3" outlined dense ></v-select>
-                                                        <v-select :items="hr2" label="Hora" class="mx-3" outlined dense ></v-select>
+    
+                                                        <v-select :items="hr1" label="Desde" class="mx-3" outlined dense ></v-select>
+                                             
+                                                        <v-select :items="hr2" label="Hasta" class="mx-3" outlined dense ></v-select>
                                                     </v-flex>
                                                     <v-col cols="12">
                                                     <v-textarea solo name="input-7-4" label="Mensaje" value="Hola, me interesa esta propiedad que vi en Domus y quiero que me contacten. Gracias."></v-textarea>

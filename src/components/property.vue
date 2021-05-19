@@ -85,8 +85,15 @@
                 <v-text-field v-if="checkbox" outlined dense background-color="white" color="blue-grey lighten-4" v-model="number" :rules="numberRules" label="Ingrese Telefono" required ></v-text-field>
                 
                 <v-checkbox v-model="checkbox" label="Quiero que me llamen"></v-checkbox>
-                <v-textarea solo name="input-7-4" label="Mensaje" value="Hola, me interesa esta propiedad que vi en Domus y quiero que me contacten. Gracias."></v-textarea>
+                <v-label> A que hora se pueden contactar conmigo: </v-label>
+                <v-flex d-flex flex-row class="my-3">
+                    <v-combobox v-model="select" :items="days" class="mr-2" label="Dias" multiple outlined clearable dense background-color="white" ></v-combobox>
+                    <v-select :items="hr1" label="Desde" class="mr-3" outlined dense background-color="white"></v-select>
+                    <v-select :items="hr2" label="Hasta" class="mr-3" outlined dense background-color="white" ></v-select>
+                </v-flex>
 
+                <v-textarea solo name="input-7-4" label="Mensaje" value="Hola, me interesa esta propiedad que vi en Domus y quiero que me contacten. Gracias."></v-textarea>
+                
                 <v-btn tile width="425" :disabled="!valid" color="lime" class="mr-4 mb-4" @click="validate">Enviar </v-btn>
                 <v-btn tile width="425" :disabled="!valid" color="success" class="mr-4 mb-4" @click="validate" href="https://api.whatsapp.com/send/?phone=5493624123456&text&app_absent=0">
                   <v-icon left> mdi-whatsapp </v-icon>
@@ -165,6 +172,14 @@
         chip4: true,
         // google: null,
         // map: null,
+        days:['Lunes','Martes','Miercoles', 'Jueves', 'Viernes'
+        ],
+        hr1:['8:00', '9:00', '10:00','11:00','12:00','17:00','18:00','19:00','20:00','21:00'
+
+        ],
+        hr2:['8:00', '9:00', '10:00','11:00','12:00','17:00','18:00','19:00','20:00','21:00'
+
+        ]
       }
     },
     methods: {
